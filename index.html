@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Website Lớp</title>
+
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f2f2f2;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+nav{
+    background:#34495e;
+    text-align:center;
+    padding:10px;
+}
+
+nav button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:16px;
+    margin:10px;
+    cursor:pointer;
+}
+
+section{
+    display:none;
+    padding:30px;
+}
+
+.active{
+    display:block;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+}
+
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:10px;
+}
+</style>
+
+<script>
+function showPage(page){
+    let sections=document.querySelectorAll("section");
+    sections.forEach(s=>s.classList.remove("active"));
+    document.getElementById(page).classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Website Lớp</h1>
+<p>Nơi lưu giữ kỷ niệm của lớp</p>
+</header>
+
+<nav>
+<button onclick="showPage('home')">Trang chủ</button>
+<button onclick="showPage('members')">Danh sách lớp</button>
+<button onclick="showPage('gallery')">Ảnh kỷ niệm</button>
+</nav>
+
+<section id="home" class="active">
+<div class="card">
+<h2>📢 Thông báo</h2>
+<p>Chào mừng đến website của lớp!</p>
+<p>Đây là nơi đăng thông báo và lưu giữ kỷ niệm.</p>
+</div>
+</section>
+
+<section id="members">
+<div class="card">
+<h2>👥 Danh sách lớp</h2>
+
+<ul>
+<li>Nguyễn Văn A</li>
+<li>Trần Thị B</li>
+<li>Lê Văn C</li>
+<li>Phạm Thị D</li>
+</ul>
+
+</div>
+</section>
+
+<section id="gallery">
+<div class="card">
+<h2>📸 Ảnh kỷ niệm</h2>
+
+<div class="gallery">
+<img src="https://picsum.photos/200?1">
+<img src="https://picsum.photos/200?2">
+<img src="https://picsum.photos/200?3">
+</div>
+
+</div>
+</section>
+
+</body>
+</html>
